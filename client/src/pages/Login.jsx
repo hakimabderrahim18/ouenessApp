@@ -27,11 +27,19 @@ export const Login = () => {
       await login(email, password);
       navigate('/dashboard');
     } catch (err) {
-      const msg =
+      console.error('Login error:', err);
+      let msg =
         err.response?.data?.message?.[i18n.language] ||
         err.response?.data?.message?.ar ||
         err.message ||
         (i18n.language === 'ar' ? 'فشل التحقق من الهوية' : 'Identifiants invalides');
+
+      if (err.response?.status === 405) {
+        msg = i18n.language === 'ar'
+          ? 'خطأ اتصال (405): يرجى إضافة المتغير VITE_API_BASE_URL في إعدادات Vercel برابط خادم Render، ثم إعادة النشر (Redeploy).'
+          : 'Erreur de routage (405) : La variable VITE_API_BASE_URL n\'est pas configurée sur Vercel. Ajoutez-la dans Settings > Environment Variables avec l\'URL Render (ex: https://...onrender.com/api), puis faites Redeploy.';
+      }
+
       setError(msg);
     } finally {
       setLoading(false);
