@@ -1,0 +1,173 @@
+{
+  "app": {
+    "name": "LogiNaft Smart System",
+    "tagline": "Plateforme Logistique de Distribution Énergétique en Algérie",
+    "country": "République Algérienne Démocratique et Populaire",
+    "version": "Version 1.0.0"
+  },
+  "landing": {
+    "home": "Accueil",
+    "features": "Fonctionnalités",
+    "network": "Réseau National",
+    "leadership": "Direction Générale",
+    "enterPlatform": "Accéder à la Plateforme",
+    "dashboardBtn": "Tableau de Bord Opérationnel",
+    "heroBadge": "Système Intégré de Logistique Énergétique & Hydrocarbures en Algérie",
+    "heroTitle": "La Plateforme Intelligente de Gestion et Traçabilité des Flux Énergétiques",
+    "heroSubtitle": "Pilotage en temps réel du stockage pétrolier, transport lourd certifié ADR, géolocalisation de flotte et optimisation algorithmique des flux pour les entreprises d'énergie en Algérie.",
+    "exploreDemo": "Comptes Démo Pré-configurés",
+    "liveFleetTracking": "Suivi en Direct de la Flotte",
+    "stats": {
+      "warehouses": "Dépôts & Raffineries Stratégiques",
+      "capacity": "Millions de Litres Gérés",
+      "onTime": "Taux de Ponctualité de Livraison",
+      "security": "Gouvernance & Sécurité RBAC"
+    },
+    "leadershipSection": {
+      "badge": "Structure Managériale Agréée",
+      "title": "Direction Générale & Commandement Stratégique",
+      "subtitle": "Supervision nationale unifiée pour garantir la continuité de l'approvisionnement énergétique et la transparence réglementaire.",
+      "gm": "Directeur Général",
+      "gmName": "RAHMOUNI OUNES (رحموني وناس)",
+      "op": "Directeur des Opérations",
+      "opName": "GOURRARI YOUCEF (قوراري يوسف)"
+    },
+    "featuresSection": {
+      "title": "Solutions Technologiques Intégrées pour l'Énergie",
+      "subtitle": "Un système pensé pour répondre aux défis du terrain et aux exigences de la chaîne logistique nationale."
+    },
+    "networkSection": {
+      "title": "Réseau Logistique & Corridors Stratégiques Nationaux",
+      "subtitle": "Interconnexion permanente entre sites de production amont, raffineries et pôles de consommation."
+    }
+  },
+  "nav": {
+    "dashboard": "Tableau de Bord Principal",
+    "seniorManagement": "Direction Générale & Structure",
+    "users": "Collaborateurs & Utilisateurs",
+    "roles": "Rôles & Permissions (RBAC)",
+    "inventory": "Gestion des Stocks & Entrepôts",
+    "shipments": "Expéditions & Distribution",
+    "tracking": "Géolocalisation en Direct (GPS)",
+    "routes": "Optimisation des Trajets (IA)",
+    "aiAssistant": "Assistant Intelligent (IA)",
+    "documents": "Documents & Factures (PDF)",
+    "reports": "Rapports Statistiques",
+    "audit": "Journal d'Audit & Timestamp",
+    "logout": "Déconnexion",
+    "leadership": "Direction"
+  },
+  "auth": {
+    "loginTitle": "Connexion au Système",
+    "loginSubtitle": "Saisissez vos identifiants professionnels pour accéder aux opérations autorisées",
+    "email": "Email Professionnel",
+    "password": "Mot de Passe",
+    "loginBtn": "Connexion Sécurisée",
+    "demoTitle": "Comptes Démonstration pour Évaluation :",
+    "clickToFill": "Cliquez pour pré-remplir",
+    "lockedWarning": "Compte temporairement verrouillé pour des raisons de sécurité.",
+    "invalidCredentials": "Email ou mot de passe incorrect.",
+    "sessionExpired": "Session expirée, veuillez vous reconnecter."
+  },
+  "header": {
+    "algiersTime": "Heure d'Alger",
+    "notifications": "Centre de Notifications",
+    "toggleTheme": "Changer le Thème",
+    "language": "Langue",
+    "profile": "Profil Utilisateur",
+    "active": "Actif"
+  },
+  "seniorManagement": {
+    "badge": "Organigramme Officiel Agréé",
+    "title": "Direction Générale & Pilotage Stratégique",
+    "desc": "Structure de commandement et de supervision officielle des chaînes logistiques d'approvisionnement énergétique en Algérie.",
+    "gmTitle": "Directeur Général",
+    "gmName": "RAHMOUNI OUNES (رحموني وناس)",
+    "gmResponsibilities": "Attributions : Supervision stratégique globale, approbation des budgets et décisions souveraines.",
+    "opTitle": "Directeur des Opérations",
+    "opName": "GOURRARI YOUCEF (قوراري يوسف)",
+    "opResponsibilities": "Attributions : Conduite opérationnelle de la flotte, plans de dispatching, gestion des stocks et crises.",
+    "certified": "Homologué & Actif",
+    "id": "Matricule",
+    "phone": "Téléphone",
+    "email": "Email",
+    "pillars": {
+      "transparency": "Transparence & Traçabilité",
+      "transparencyDesc": "Chaque décision et expédition est horodatée automatiquement avec identification de l'opérateur.",
+      "continuity": "Continuité de l'Approvisionnement",
+      "continuityDesc": "Liaison constante entre les raffineries (Arzew, Skikda) et les centres de distribution intérieure.",
+      "optimization": "Optimisation Numérique Intelligente",
+      "optimizationDesc": "Utilisation de l'intelligence artificielle pour réduire les délais de livraison et la consommation de carburant."
+    }
+  },
+  "users": {
+    "title": "Gestion des Utilisateurs & Rôles (RBAC)",
+    "subtitle": "Enregistrement des collaborateurs et attribution stricte des prérogatives",
+    "addEmployee": "Ajouter un Collaborateur",
+    "searchPlaceholder": "Rechercher par nom, email, matricule...",
+    "allRoles": "Tous les Rôles",
+    "allStatuses": "Tous les Statuts",
+    "active": "Actif",
+    "inactive": "Inactif",
+    "suspended": "Suspendu",
+    "fullName": "Collaborateur / Nom Complet",
+    "professionalId": "Matricule (ID)",
+    "role": "Rôle & Prérogatives",
+    "department": "Département & Fonction",
+    "contact": "Contact",
+    "status": "Statut",
+    "actions": "Actions",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "seniorBadge": "Direction",
+    "modalCreateTitle": "Enregistrement d'un Nouveau Collaborateur",
+    "modalEditTitle": "Modification des Informations Collaborateur",
+    "fullNameAr": "Nom Complet (Arabe)",
+    "fullNameLatin": "Nom Complet (Latin)",
+    "jobTitleAr": "Intitulé du Poste (Arabe)",
+    "dob": "Date de Naissance",
+    "phoneLabel": "Numéro de Téléphone",
+    "cancel": "Annuler",
+    "save": "Enregistrer"
+  },
+  "roles": {
+    "title": "Matrice des Rôles & Permissions (RBAC Matrix)",
+    "subtitle": "Attribution granulaire des droits par module (Voir, Créer, Modifier, Supprimer, Exporter)",
+    "createRole": "Créer un Rôle Personnalisé",
+    "systemRole": "Système",
+    "permissionsCount": "Permissions",
+    "module": "Module Applicatif",
+    "view": "Voir",
+    "create": "Créer",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "export": "Exporter",
+    "selectAll": "Tout Sélectionner"
+  },
+  "audit": {
+    "title": "Journal d'Audit des Opérations (Daily Timestamp)",
+    "subtitle": "Historique immuable répertoriant chaque action, auteur, horodatage et adresse IP",
+    "exportCsv": "Exporter le Journal (CSV)",
+    "timestamp": "Date & Heure (DZ)",
+    "user": "Opérateur",
+    "action": "Action",
+    "module": "Module",
+    "details": "Description & Détails",
+    "ip": "Adresse IP",
+    "diff": "Évolution",
+    "before": "État Initial (Before)",
+    "after": "État Modifié (After)",
+    "close": "Fermer"
+  },
+  "common": {
+    "loading": "Chargement en cours...",
+    "success": "Opération effectuée avec succès",
+    "error": "Une erreur est survenue",
+    "confirmDelete": "Confirmez-vous la suppression ?",
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "total": "Total",
+    "yes": "Oui",
+    "no": "Non"
+  }
+}

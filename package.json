@@ -1,0 +1,20 @@
+{
+  "name": "loginaft-smart-system",
+  "version": "1.0.0",
+  "description": "LogiNaft Smart System - Advanced Energy Logistics Management Platform for Algeria",
+  "main": "server/src/server.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "seed": "cd server && npm run seed",
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install",
+    "build": "cd client && npm run build"
+  },
+  "keywords": ["logistics", "energy", "naftal", "sonatrach", "algeria", "mern", "tracking", "inventory"],
+  "author": "LogiNaft Architecture Team",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "app": {
+    "name": "LogiNaft Smart System",
+    "tagline": "Algerian Energy Logistics & Distribution Platform",
+    "country": "People's Democratic Republic of Algeria",
+    "version": "Version 1.0.0"
+  },
+  "landing": {
+    "home": "Home",
+    "features": "Modules & Tech",
+    "network": "National Network",
+    "leadership": "Leadership",
+    "enterPlatform": "Enter Platform",
+    "dashboardBtn": "Operational Dashboard",
+    "heroBadge": "Unified Energy Logistics & Hydrocarbons Management System in Algeria",
+    "heroTitle": "Intelligent Platform for Energy Supply Chain Governance & Fleet Tracking",
+    "heroSubtitle": "Real-time petroleum inventory control, ADR-certified transport fleet tracking, live GPS localization, and AI route optimization tailored for Algerian energy enterprises.",
+    "exploreDemo": "Pre-Configured Demo Accounts",
+    "liveFleetTracking": "Live Fleet GPS Tracking",
+    "stats": {
+      "warehouses": "Strategic Depots & Refineries",
+      "capacity": "Million Liters Managed",
+      "onTime": "On-Time Delivery Rate",
+      "security": "Granular RBAC Governance"
+    },
+    "leadershipSection": {
+      "badge": "Official Management Hierarchy",
+      "title": "Senior Management & Strategic Oversight",
+      "subtitle": "Unified executive governance guaranteeing continuous nationwide energy supply and complete regulatory audit compliance.",
+      "gm": "General Manager",
+      "gmName": "RAHMOUNI OUNES (رحموني وناس)",
+      "op": "Operations Manager",
+      "opName": "GOURRARI YOUCEF (قوراري يوسف)"
+    },
+    "featuresSection": {
+      "title": "Integrated Technological Capabilities for the Energy Sector",
+      "subtitle": "An advanced digital suite engineered to address practical field realities and national operational challenges."
+    },
+    "networkSection": {
+      "title": "Strategic Energy Hubs & Nationwide Transport Corridors",
+      "subtitle": "Real-time interconnection between upstream extraction hubs, refineries, and internal distribution centers."
+    }
+  },
+  "nav": {
+    "dashboard": "Main Dashboard",
+    "seniorManagement": "Senior Management & Structure",
+    "users": "Employees & Users",
+    "roles": "Roles & Permissions (RBAC)",
+    "inventory": "Inventory & Warehouses",
+    "shipments": "Shipments & Distribution",
+    "tracking": "Live GPS Tracking",
+    "routes": "Route Optimization (AI)",
+    "aiAssistant": "AI Assistant",
+    "documents": "PDF Documents & Invoices",
+    "reports": "Statistical Reports",
+    "audit": "System Audit Trail",
+    "logout": "Log Out",
+    "leadership": "Leadership"
+  },
+  "auth": {
+    "loginTitle": "System Authentication",
+    "loginSubtitle": "Enter your professional credentials to access authorized operational workflows",
+    "email": "Professional Email",
+    "password": "Password",
+    "loginBtn": "Secure Login",
+    "demoTitle": "Quick Demo Accounts for Evaluation:",
+    "clickToFill": "Click to auto-fill",
+    "lockedWarning": "Account temporarily locked for security reasons.",
+    "invalidCredentials": "Invalid email or password.",
+    "sessionExpired": "Session expired, please log in again."
+  },
+  "header": {
+    "algiersTime": "Algiers Time",
+    "notifications": "Notifications Center",
+    "toggleTheme": "Toggle Theme",
+    "language": "Language",
+    "profile": "User Profile",
+    "active": "Active"
+  },
+  "seniorManagement": {
+    "badge": "Official Organizational Chart",
+    "title": "Senior Management & Strategic Governance",
+    "desc": "Official command and oversight structure governing energy logistics supply chains across Algeria.",
+    "gmTitle": "General Manager",
+    "gmName": "RAHMOUNI OUNES (رحموني وناس)",
+    "gmResponsibilities": "Authority: Overall strategic oversight, executive budgets, and sovereign corporate governance.",
+    "opTitle": "Operations Manager",
+    "opName": "GOURRARI YOUCEF (قوراري يوسف)",
+    "opResponsibilities": "Authority: Transport fleet field operations, nationwide dispatching, warehouse & crisis management.",
+    "certified": "Official & Active",
+    "id": "Employee ID",
+    "phone": "Phone",
+    "email": "Email",
+    "pillars": {
+      "transparency": "Transparency & Audit Trail",
+      "transparencyDesc": "Every dispatch and inventory decision is logged automatically with timestamp, user ID, and IP address.",
+      "continuity": "Energy Supply Continuity",
+      "continuityDesc": "Seamless interconnection between refining plants (Arzew, Skikda) and national consumption centers.",
+      "optimization": "Intelligent Digital Optimization",
+      "optimizationDesc": "Leveraging AI route optimization to minimize transport time, costs, and carbon footprint."
+    }
+  },
+  "users": {
+    "title": "User & Employee Governance (RBAC)",
+    "subtitle": "New staff onboarding, granular permissions, and personnel directory",
+    "addEmployee": "Add New Employee",
+    "searchPlaceholder": "Search by name, email, employee ID...",
+    "allRoles": "All Job Roles",
+    "allStatuses": "All Statuses",
+    "active": "Active",
+    "inactive": "Inactive",
+    "suspended": "Suspended",
+    "fullName": "Employee / Full Name",
+    "professionalId": "Professional ID",
+    "role": "Role & Access",
+    "department": "Department & Position",
+    "contact": "Contact",
+    "status": "Status",
+    "actions": "Actions",
+    "edit": "Edit",
+    "delete": "Delete",
+    "seniorBadge": "Executive",
+    "modalCreateTitle": "Register New Corporate User",
+    "modalEditTitle": "Edit Employee Information",
+    "fullNameAr": "Full Name (Arabic)",
+    "fullNameLatin": "Full Name (Latin)",
+    "jobTitleAr": "Job Title (Arabic)",
+    "dob": "Date of Birth",
+    "phoneLabel": "Phone Number",
+    "cancel": "Cancel",
+    "save": "Save Changes"
+  },
+  "roles": {
+    "title": "Role-Based Access Control Matrix (RBAC)",
+    "subtitle": "Granular module permissions (View, Create, Edit, Delete, Export)",
+    "createRole": "Create Custom Role",
+    "systemRole": "System",
+    "permissionsCount": "Permissions",
+    "module": "System Module",
+    "view": "View",
+    "create": "Create",
+    "edit": "Edit",
+    "delete": "Delete",
+    "export": "Export",
+    "selectAll": "Select All"
+  },
+  "audit": {
+    "title": "Operational Audit Log (Daily Timestamp System)",
+    "subtitle": "Immutable historical ledger tracking every action, user, timestamp, and IP address",
+    "exportCsv": "Export Log (CSV)",
+    "timestamp": "Date & Time (DZ)",
+    "user": "Operator",
+    "action": "Action",
+    "module": "Module",
+    "details": "Description & Context",
+    "ip": "IP Address",
+    "diff": "Changes",
+    "before": "Previous State (Before)",
+    "after": "New State (After)",
+    "close": "Close"
+  },
+  "common": {
+    "loading": "Loading...",
+    "success": "Operation completed successfully",
+    "error": "An error occurred",
+    "confirmDelete": "Are you sure you want to delete this?",
+    "search": "Search",
+    "filter": "Filter",
+    "total": "Total",
+    "yes": "Yes",
+    "no": "No"
+  }
+}
