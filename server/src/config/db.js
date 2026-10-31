@@ -85,7 +85,7 @@ const connectDB = async () => {
     const cleanUri = sanitizeMongoUri(rawUri);
 
     const conn = await mongoose.connect(cleanUri, {
-      serverSelectionTimeoutMS: 5000,
+      serverSelectionTimeoutMS: 15000,
     });
     console.log(`[Database] MongoDB Connected: ${conn.connection.host}/${conn.connection.name}`);
     return conn;
