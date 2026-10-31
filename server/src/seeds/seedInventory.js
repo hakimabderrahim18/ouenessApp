@@ -3,10 +3,12 @@ const mongoose = require('mongoose');
 const Warehouse = require('../models/Warehouse');
 const Product = require('../models/Product');
 const User = require('../models/User');
+const { sanitizeMongoUri } = require('../config/db');
 
 const seedInventory = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/loginaft_db');
+    const rawUri = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/loginaft_db';
+    await mongoose.connect(sanitizeMongoUri(rawUri));
     console.log('[Seed] Seeding Warehouses & Energy Products...');
 
     const managers = await User.find({ status: 'active' });

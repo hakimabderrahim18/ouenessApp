@@ -5,10 +5,12 @@ const Product = require('../models/Product');
 const Truck = require('../models/Truck');
 const Shipment = require('../models/Shipment');
 const User = require('../models/User');
+const { sanitizeMongoUri } = require('../config/db');
 
 const seedShipmentsAndFleet = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/loginaft_db');
+    const rawUri = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/loginaft_db';
+    await mongoose.connect(sanitizeMongoUri(rawUri));
     console.log('[Seed] Seeding Fleet & Live Shipments...');
 
     const drivers = await User.find({ status: 'active' });

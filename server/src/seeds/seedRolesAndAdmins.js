@@ -2,10 +2,12 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 const Role = require('../models/Role');
 const User = require('../models/User');
+const { sanitizeMongoUri } = require('../config/db');
 
 const seedRolesAndAdmins = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/loginaft_db');
+    const rawUri = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/loginaft_db';
+    await mongoose.connect(sanitizeMongoUri(rawUri));
     console.log('[Seed] Connected to MongoDB for seeding roles and users...');
 
     // 1. Roles definition
