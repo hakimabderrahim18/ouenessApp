@@ -18,8 +18,23 @@ const sanitizeMongoUri = (rawUri) => {
     uri = uri.slice(1, -1).trim();
   }
 
+  // If corrupted prefix exists (e.g. 'retrymongodb+srv://' or accidental duplicate URLs)
+  if (uri.includes('mongodb+srv://')) {
+    uri = uri.slice(uri.lastIndexOf('mongodb+srv://'));
+  } else if (uri.includes('mongodb://')) {
+    uri = uri.slice(uri.lastIndexOf('mongodb://'));
+  }
+
   const qIndex = uri.indexOf('?');
-  if (qIndex === -1) return uri;
+  if (qIndex === -1) {
+    // If no query parameters, ensure database name is specified
+    if (uri.endsWith('/')) {
+      uri += 'loginaft_db';
+    } else if (!uri.split('://')[1]?.includes('/')) {
+      uri += '/loginaft_db';
+    }
+    return `${uri}?retryWrites=true&w=majority`;
+  }
 
   let base = uri.slice(0, qIndex);
   let fullQuery = uri.slice(qIndex + 1);
@@ -30,6 +45,10 @@ const sanitizeMongoUri = (rawUri) => {
   if (base.endsWith('/') && slashMatch) {
     base = base + slashMatch[1];
     fullQuery = fullQuery.replace(slashMatch[0], '');
+  } else if (base.endsWith('/')) {
+    base += 'loginaft_db';
+  } else if (!base.split('://')[1]?.includes('/')) {
+    base += '/loginaft_db';
   }
 
   // Split query on both '&' and '?' to catch accidental duplicate query parameters
