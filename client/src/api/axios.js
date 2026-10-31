@@ -1,11 +1,21 @@
 import axios from 'axios';
 
-// When deployed on Vercel, VITE_API_BASE_URL points to the Render backend API (e.g. https://loginaft-server.onrender.com/api)
-// In local development, defaults to '/api' (proxied by Vite dev server to localhost:5000)
-const rawBase = import.meta.env.VITE_API_BASE_URL || '';
-const baseURL = rawBase
-  ? (rawBase.endsWith('/api') ? rawBase : `${rawBase.replace(/\/$/, '')}/api`)
-  : '/api';
+// Resolved backend API URL:
+// 1. Explicit environment variable VITE_API_BASE_URL if configured
+// 2. Fallback to production Render backend (https://ouenessapp.onrender.com/api) when running on Vercel
+// 3. Fallback to '/api' for local development (proxied by Vite)
+const getBaseURL = () => {
+  if (import.meta.env.VITE_API_BASE_URL) {
+    const raw = import.meta.env.VITE_API_BASE_URL.trim();
+    return raw.endsWith('/api') ? raw : `${raw.replace(/\/$/, '')}/api`;
+  }
+  if (typeof window !== 'undefined' && window.location.hostname.includes('vercel.app')) {
+    return 'https://ouenessapp.onrender.com/api';
+  }
+  return '/api';
+};
+
+const baseURL = getBaseURL();
 
 const api = axios.create({
   baseURL,

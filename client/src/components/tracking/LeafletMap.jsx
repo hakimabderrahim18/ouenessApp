@@ -82,6 +82,9 @@ const LeafletMap = ({ selectedShipmentId, onSelectShipment }) => {
           return '/';
         }
       }
+      if (typeof window !== 'undefined' && window.location.hostname.includes('vercel.app')) {
+        return 'https://ouenessapp.onrender.com';
+      }
       return '/';
     };
 
