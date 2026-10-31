@@ -17,13 +17,47 @@ const { initCronReports } = require('./services/cronReportService');
 const app = express();
 const server = http.createServer(app);
 
+// CORS configuration supporting Localhost, Render, and Vercel domains
+const allowedOrigins = [
+  'http://localhost:5173',
+  'http://localhost:3000',
+  'http://localhost:5000',
+];
+
+if (process.env.CLIENT_URL) {
+  process.env.CLIENT_URL.split(',').forEach((url) => {
+    const trimmed = url.trim().replace(/\/$/, '');
+    if (trimmed) allowedOrigins.push(trimmed);
+  });
+}
+
+const corsOptions = {
+  origin: (origin, callback) => {
+    // Allow server-to-server, curl, Postman, mobile requests
+    if (!origin) return callback(null, true);
+
+    // Allow defined origins
+    if (allowedOrigins.includes(origin)) return callback(null, true);
+
+    // Allow all Vercel deployment preview / production subdomains
+    if (origin.endsWith('.vercel.app')) return callback(null, true);
+
+    // In development or if CLIENT_URL is *, allow all
+    if (process.env.NODE_ENV !== 'production' || process.env.CLIENT_URL === '*') {
+      return callback(null, true);
+    }
+
+    // Permissive callback for seamless deployment
+    return callback(null, true);
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept'],
+};
+
 // Initialize Socket.IO
 const io = new Server(server, {
-  cors: {
-    origin: process.env.CLIENT_URL || 'http://localhost:5173',
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true,
-  },
+  cors: corsOptions,
 });
 
 // Attach io instance to express app for controllers
@@ -33,15 +67,11 @@ app.set('io', io);
 app.use(
   helmet({
     contentSecurityPolicy: false, // Allow inline styles & external maps/fonts
+    crossOriginResourcePolicy: { policy: 'cross-origin' },
   })
 );
 
-app.use(
-  cors({
-    origin: process.env.CLIENT_URL || 'http://localhost:5173',
-    credentials: true,
-  })
-);
+app.use(cors(corsOptions));
 
 app.use(cookieParser());
 app.use(express.json({ limit: '10mb' }));

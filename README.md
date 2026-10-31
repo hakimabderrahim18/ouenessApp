@@ -58,6 +58,48 @@ npm run dev:client
 
 ---
 
+## 🌐 Déploiement en Production (Render & Vercel)
+
+### 1. Déploiement Backend sur [Render.com](https://render.com)
+Le backend Node.js / Express / Socket.IO peut être déployé soit via le fichier Blueprint [`render.yaml`](./render.yaml) soit manuellement en tant que **Web Service** :
+
+1. Créez un nouveau **Web Service** sur Render et connectez votre dépôt GitHub.
+2. Définissez les paramètres suivants :
+   - **Root Directory :** `server`
+   - **Runtime :** `Node`
+   - **Build Command :** `npm install`
+   - **Start Command :** `npm start`
+   - **Health Check Path :** `/api/health`
+3. Ajoutez les variables d'environnement (**Environment Variables**) :
+   - `NODE_ENV` : `production`
+   - `PORT` : `10000` (ou laissez Render attribuer le port automatiquement)
+   - `MONGO_URI` : Votre chaîne de connexion MongoDB Atlas (ex: `mongodb+srv://...`)
+   - `JWT_ACCESS_SECRET` : Clé secrète aléatoire
+   - `JWT_REFRESH_SECRET` : Clé secrète aléatoire
+   - `CLIENT_URL` : L'URL de votre frontend sur Vercel (ex: `https://votre-app.vercel.app`)
+4. Initialiser les données de démonstration :
+   - Dans le tableau de bord Render, ouvrez l'onglet **Shell** de votre service et exécutez :
+     ```bash
+     npm run seed
+     ```
+
+---
+
+### 2. Déploiement Frontend sur [Vercel.com](https://vercel.com)
+Le frontend React 18 / Vite / Tailwind est configuré pour Vercel avec gestion complète du routage SPA (`vercel.json`) :
+
+1. Importez votre dépôt GitHub sur **Vercel**.
+2. Dans la configuration du projet :
+   - **Framework Preset :** `Vite`
+   - **Root Directory :** `client` (ou laissez la racine grâce au `vercel.json` racine)
+   - **Build Command :** `npm run build`
+   - **Output Directory :** `dist`
+3. Ajoutez la variable d'environnement (**Environment Variable**) :
+   - `VITE_API_BASE_URL` : L'URL publique de votre backend Render avec `/api` (ex: `https://loginaft-server.onrender.com/api`)
+4. Cliquez sur **Deploy**. Votre application est immédiatement en ligne et prête pour la production !
+
+---
+
 ## 🌟 الميزات المكتملة في النظام (System Capabilities)
 
 1. **نظام متعدد اللغات وفوري (i18n):**

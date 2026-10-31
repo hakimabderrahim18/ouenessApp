@@ -73,7 +73,19 @@ const LeafletMap = ({ selectedShipmentId, onSelectShipment }) => {
     fetchMapData();
 
     // Listen to real-time telemetry updates via Socket.IO
-    const socket = io('/', { path: '/socket.io' });
+    const getSocketTarget = () => {
+      if (import.meta.env.VITE_SOCKET_URL) return import.meta.env.VITE_SOCKET_URL;
+      if (import.meta.env.VITE_API_BASE_URL) {
+        try {
+          return new URL(import.meta.env.VITE_API_BASE_URL, window.location.origin).origin;
+        } catch (e) {
+          return '/';
+        }
+      }
+      return '/';
+    };
+
+    const socket = io(getSocketTarget(), { path: '/socket.io' });
 
     socket.on('truck_position_update', (update) => {
       setMapData((prev) => {
